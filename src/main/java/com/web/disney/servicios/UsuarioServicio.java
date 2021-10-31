@@ -33,6 +33,8 @@ import org.springframework.web.context.request.ServletRequestAttributes;
  */
 @Service
 public class UsuarioServicio implements UserDetailsService{
+
+    
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
     

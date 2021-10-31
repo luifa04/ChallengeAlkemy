@@ -7,6 +7,7 @@ import com.web.disney.entidades.Personaje;
 import com.web.disney.errores.ErrorServicio;
 import com.web.disney.repositorios.PeliculaRepositorio;
 import com.web.disney.repositorios.PersonajeRepositorio;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
@@ -70,6 +71,10 @@ public class PersonajeServicio {
         Pelicula pelicula= peliculaRepositorio.findById(idPelicula).get();
         
         personaje.getPeliculas().add(pelicula);
+    }
+    
+    public ArrayList<Object[]> getAll(){
+        return personajeRepositorio.getAll();
     }
     
     public List<Personaje> listAll() {

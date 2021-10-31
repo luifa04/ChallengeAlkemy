@@ -2,6 +2,7 @@
 package com.web.disney.repositorios;
 
 import com.web.disney.entidades.Personaje;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -16,4 +17,8 @@ public interface PersonajeRepositorio extends JpaRepository<Personaje, String>{
     
     @Query("select p from Personaje p where p.peliculas.id = :q")
     List<Personaje> findAllByPeliculas(@Param("q") String q); 
+    
+    @Query(value = "SELECT nombre,foto FROM Personaje",nativeQuery = true)
+    public ArrayList<Object[]> getAll();
+    
 }
